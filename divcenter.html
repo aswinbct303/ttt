@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centering</title>
+    <style>
+        /* Center the square on the page */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: antiquewhite;
+        }
+
+        /* Square */
+        .square {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Circle */
+        #circle {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            border-radius: 50%;
+        }
+
+        #sq {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .square,
+        #circle {
+            display: grid;
+            place-items: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="square">
+        <div id="circle">
+            <div id="sq"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
