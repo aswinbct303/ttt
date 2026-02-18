@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <input type="text" name="user" id="user" placeholder="user">
+    <br><br><br><br>
+    <button type="button" onclick="buttonclick()">Click Here (onclock)</button>
+    <br><br><br><br>
+    <button type="button" id="btnli">click here event listner</button>
+    <br><br><br><br>
+    <div id="div1">This is a div</div>
+    <br><br><br><br>
+    <div id="div2">This is a div</div>
+    <br>
+    <button type="button" id="button1" onclick="onclickcollor()">click here</button>
+    </ol>
+
+    <script>
+        // seting any attribute
+        let attr = document.getElementById("user");
+        console.log(attr.getAttribute("type"));
+        attr.setAttribute("class", "hello")
+        console.log(attr.getAttribute("class"));
+        attr.setAttribute("maxlength", "5");
+
+        // adding any css function
+        attr.style.border = "5px solid black";
+        attr.style.backgroundColor = "lightgreen";
+        attr.style.cssText += "width: 200px; height:50px; font-size:50px"
+
+        // using onlick
+        function buttonclick() {
+            console.log("the button is clicked");
+
+        }
+
+        // using addEventListener
+        let btn = document.getElementById("btnli");
+        function bb() {
+            console.log("button clicked by ext function");
+        }
+        btn.addEventListener("click", bb);
+
+        // mouse hover
+        let div1 = document.querySelector("#div1");
+        console.log(div1);
+
+        function hover() {
+            const randomColor = `rgb(${Math.floor(Math.random() * 256)},
+        ${Math.floor(Math.random() * 256)},
+        ${Math.floor(Math.random() * 256)})`;
+
+            const randomtext = "HELLO,HOME,ABOUT,CONTACT,HELP,";
+            const rndmtxt = randomtext.split(",");
+            const randomtextt = rndmtxt[Math.floor(Math.random() * rndmtxt.length)];
+
+            console.log("hover through this");
+            div1.innerText = randomtextt;
+            div1.style.backgroundColor = randomColor;
+
+        }
+
+        div1.addEventListener("mouseover", hover);
+
+        // onclick color change
+        function onclickcollor() {
+            let div2 = document.querySelector("#div2");
+
+            const randomColor = `rgb(${Math.floor(Math.random() * 256)},
+        ${Math.floor(Math.random() * 256)},
+        ${Math.floor(Math.random() * 256)})`;
+
+            const randomtext = "HELLO,HOME,ABOUT,CONTACT,HELP,";
+            const rndmtxt = randomtext.split(",");
+            const randomtextt = rndmtxt[Math.floor(Math.random() * rndmtxt.length)];
+
+            console.log("clicked");
+            div2.innerText = randomtextt;
+            div2.style.backgroundColor = randomColor;
+        }
+
+    </script>
+</body>
+
+</html>

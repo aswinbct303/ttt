@@ -1,0 +1,16 @@
+#div1, #div2{
+    display: flex;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    background-color: aquamarine;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
+
+#button1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

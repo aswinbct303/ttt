@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode</title>
+    <link rel="stylesheet" href="darkmode.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button type="button" id="btn1" onclick="mode()">☾</button>
+
+    <script>
+        let btn1 = document.getElementById("btn1");
+        let body = document.getElementsByTagName("body")[0];
+        let isDark = false;
+
+        function mode(){
+            if (isDark) {
+            body.style.backgroundColor = "white";
+            btn1.innerText = "☾"; 
+        } else {
+            body.style.backgroundColor = "rgb(26, 24, 24)";
+            btn1.innerText = "☀"; 
+        }
+        isDark = !isDark;
+    }
+    </script>
+</body>
+</html>
