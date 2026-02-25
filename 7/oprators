@@ -1,0 +1,73 @@
+// spread oprators
+let num = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let max = Math.max(...num) // ... is spread used to split the arry into elements
+console.log(max);
+
+
+// rest oprators 
+let a = 1;
+let b = 2;
+let c = 3;
+let d = 4;
+function newwarrr(...nums) {
+    console.log(nums);
+
+}
+newwarrr(a, b, c, d); // joined all in one array
+
+
+
+// shallow copy
+let shaloo = [...num];
+console.log("shallow copy :", shaloo);
+
+
+// comapin array using spread
+let num2 = [11, 12, 13, 14, 15, 16, 17, 18, 19];
+let compine = [...num, ...num2, "100", "101"]; // compine one or more
+console.log("compined :", compine);
+
+
+// join
+let str = "aswin"
+let split = [...str]; // can use .join here also
+console.log("spilted :", split);
+
+let joined = split.join("");
+console.log("combined using join :", joined);
+
+
+
+/// hoisting
+const sumConst = (a, b) => a + b;
+
+console.log("sumfunc",sumFunc(1,2));
+console.log("sumConst",sumFunc(7,2));
+
+function sumFunc(a, b){
+    return a + b
+}
+
+
+/// closure 
+let myNmae1 = "aswin";
+
+function myNmae(){
+    console.log(myNmae1);
+    
+}
+myNmae();
+
+//
+function outer(){
+
+    const msg = "hello";
+    function inner(){
+        console.log(msg);
+        
+    }
+
+    inner();
+}
+
+outer();
