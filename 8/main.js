@@ -30,29 +30,33 @@ function getData(dataid, getNextData) {
 }
 //callback hell 
 getData(1, () => {
-console.log("getting data2....");
-getData(2, () => {
-    console.log("getting data3....");
-getData(3, () => {
-        console.log("getting data4....");
-getData(4);
-    }) 
-})
+    console.log("getting data2....");
+    getData(2, () => {
+        console.log("getting data3....");
+        getData(3, () => {
+            console.log("getting data4....");
+            getData(4);
+        })
+    })
 });
 
 
 
 // promise
-let promise = new Promise((resolve,reject)=>{
-  let success = true;
+const promise1 = new Promise((resolve, reject) => {
+    let val = false;
+    if (val) {
+        resolve("resolved");
+    } else {
+        reject("rejected");
+    }
+})
 
-  if(success) resolve("Done");
-  else reject("Error");
+promise1.then((msg) => {
+    console.log("done", msg);
+}).catch((msg) => {
+    console.log("error", msg);
 });
-
-promise
-.then(res=>console.log(res))
-.catch(err=>console.log(err));
 
 
 
@@ -67,25 +71,25 @@ function getData(dataId) {
 }
 
 getData(1)
-.then(() => {
-    return getData(2);
-})
-.then(() => {
-    return getData(3);
-})
-.then((res) => {
-    console.log(res);
-})
-.catch((err) => {
-    console.log(err);
-});
+    .then(() => {
+        return getData(2);
+    })
+    .then(() => {
+        return getData(3);
+    })
+    .then((res) => {
+        console.log(res);
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 
 
 // async await
-function getdataofall(getdat){
-    return new Promise((resolve, reject) =>{
-        setTimeout(() =>{
+function getdataofall(getdat) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
             console.log("hello brooo", getdat);
             resolve("status 200");
         }, 2000)
@@ -106,15 +110,15 @@ getddata(); // need to call the function
     await getdataofall(1);
     await getdataofall(2);
     await getdataofall(3);
-}) (); // will automatically run without calling
+})(); // will automatically run without calling
 
 
 
 /// Genarator function
-function* numbers(){
-  yield 1;
-  yield 2;
-  yield 3;
+function* numbers() {
+    yield 1;
+    yield 2;
+    yield 3;
 }
 
 let gen = numbers();
@@ -128,15 +132,15 @@ console.log(gen.next());
 
 
 ///Destructuring
-let user = {name:"Ashwin", age:22};
+let user = { name: "Ashwin", age: 22 };
 
-let {name, age} = user;
+let { name, age } = user;
 
 console.log(name, age);
 
 //array Destructuring
-let arr = [10,20,30];
+let arr = [10, 20, 30];
 
-let [a,b] = arr;
+let [a, b] = arr;
 
 console.log(a, b);
